@@ -68,14 +68,14 @@ public class ShareModule extends ReactContextBaseJavaModule {
                 dataMap.putString("value", intent.getStringExtra(Intent.EXTRA_TEXT));
                 dataArrayMap.pushMap(dataMap);
             } else if (Intent.ACTION_SEND.equals(action) && ("image/*".equals(type) || "image/jpeg".equals(type) || "image/png".equals(type) || "image/jpg".equals(type) 
-                                                          || "video/*".equals(type) || "video/mp4".equals(type) || "video/3gp".equals(type) || "video/m4v".equals(type) || "video/mkv".equals(type) || "video/mov".equals(type) || "video/mpeg".equals(type) )) {
+                                                          || "video/*".equals(type) || "video/mp4".equals(type) || "video/3gp".equals(type) || "video/m4v".equals(type) || "video/mov".equals(type) || "video/mpeg".equals(type) )) {
                 WritableMap dataMap = Arguments.createMap();
                 dataMap.putString("type", type);
                 Uri uri = (Uri) intent.getParcelableExtra(Intent.EXTRA_STREAM);
                 dataMap.putString("value", "file://" + RealPathUtil.getRealPathFromURI(currentActivity, uri));
                 dataArrayMap.pushMap(dataMap);
             } else if (Intent.ACTION_SEND_MULTIPLE.equals(action) && ("image/*".equals(type) || "image/jpeg".equals(type) || "image/png".equals(type) || "image/jpg".equals(type) 
-                                                          || "video/*".equals(type) || "video/mp4".equals(type) || "video/3gp".equals(type) || "video/m4v".equals(type) || "video/mkv".equals(type) || "video/mov".equals(type) || "video/mpeg".equals(type) )) {
+                                                          || "video/*".equals(type) || "video/mp4".equals(type) || "video/3gp".equals(type) || "video/m4v".equals(type) || "video/mov".equals(type) || "video/mpeg".equals(type) )) {
                 ArrayList<Uri> uris = intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);
                 for (Uri uri : uris) {
                     WritableMap dataMap = Arguments.createMap();
